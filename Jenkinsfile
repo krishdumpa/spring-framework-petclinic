@@ -15,13 +15,13 @@ pipeline {
 
     stage(' Upload') {
       steps {
-        sh 'aws s3 cp target/petclinic.war s3://dev-krishdumpa-artifactory/'
+        sh 'aws s3 cp target/petclinic.war s3://uhcs-artifactory/'
       }
     }
 
     stage('deploy') {
       steps {
-        sh 'scp target/petclinic.war root@10.0.5.204:/opt/tomcat/webapps/'
+        sh 'scp target/petclinic.war root@10.0.3.143:/opt/tomcat/webapps/'
       }
     }
 
